@@ -36,13 +36,8 @@ class Stack {
             return this.stackControl.pop();
             break;
     }
-
-    // if (!(this.isEmpty())) {
-    //     this.stackControl.pop();
-    // }
-    // throw new Error('STACK_UNDERFLOW');
-
   }
+  
   // This function will return the list of items stored in the stack.
   display() {
     return this.stackControl

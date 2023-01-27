@@ -33,6 +33,8 @@ const renderListStack = () => {
 };
 renderListStack();
 
+
+// What is "type"? Where does it come from? 
 const generateWarningStack = type => {
   if (type === 'underflow') {
     warningBottomStack.style.display = 'block';
