@@ -1,39 +1,36 @@
 class Queue {
-  constructor() {
-    this.queueControl = [];
-    this.MAX_SIZE = 10;
-  }
-
-  canEnqueue() {
-    let result = false
-    if (this.queueControl.length < this.MAX_SIZE){
-        result = true;
-    }
-    return result;
-  }
-
-  isEmpty() {
-    return this.queueControl.length === 0
-  }
-
-  enqueue(item) {
-    if (this.canEnqueue()){
-        this.queueControl.push(item)
-        return this.queueControl
-    }
-    throw new Error('QUEUE_OVERFLOW');
-  }
-
-  dequeue() {
-    if (!this.isEmpty()) { 
-        return this.queueControl.shift() 
-    }
-    throw new Error('QUEUE_UNDERFLOW')
-  }
-
-  display() {
-    return this.queueControl;
-  }  
+    constructor(size) {
+        this.queueControl = [];
+        this.MAX_SIZE = size;
+      }
+    
+      display() {
+        return this.queueControl;
+      }
+    
+      canEnqueue() {
+        if (this.queueControl.length == this.MAX_SIZE) return false;
+        return true;
+      }
+    
+      isEmpty() {
+        if (this.queueControl.length > 0) return false;
+        return true;
+      }
+    
+      enqueue(item) {
+        if (this.canEnqueue()) {
+          this.queueControl.unshift(item);
+          return this.queueControl;
+        }
+        return 'Queue Overflow';
+      }
+    
+      dequeue() {
+        if (this.queueControl.length === 0) return 'Queue Underflow';
+        return this.queueControl.pop();
+      }
+  
 }
 
 // This is required to enable the automated tests, please ignore it.

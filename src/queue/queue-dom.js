@@ -48,13 +48,6 @@ const generateWarningQueue = (type) => {
 const addToQueue = () => {
   try {
     // ... your code goes here
-    queue.push(queueInput.value) 
-    if ((queue.push(queueInput.value) === 'Stack Overflow' )){
-        generateWarningQueue('overflow')
-    } else {
-        clearQueueInput();
-        generateListQueue();
-      }
   } catch (error) {
     // there was an overflow error, handle it
   }
